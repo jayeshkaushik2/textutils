@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- the csrf_token is used as a permission or as a key which checks that the request is comming from my website or a from hacker -->
+<form action='/analyaz' method='post'> {% csrf_token %}
+  <div class="alert alert-success" role="alert">
+    <strong>
+      Welcome to textutils
+    </strong>
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Text below:</label>
+    <textarea class="form-control" name='text' id="exampleFormControlTextarea1" rows="5"></textarea>
+  </div>
+  <div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" name="removepunc" id="custom1">
+    <label class="form-check-label" for="custom1">Remove puncuations</label>
+  </div>
+  <div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" name="fullcaps" id="custom2">
+    <label class="form-check-label" for="custom2">Convert all uppercase</label>
+  </div>
+  <div class="form-check form-switch">
+    <input class="form-check-input " type="checkbox" name="charcount" id="custom3">
+    <label class="form-check-label" for="custom3">Count characters</label>
+  </div>
+
+  <button type="submit" class="btn btn-success mt-2 m-lg-1">Analyaz text</button>
+
+</form>
+
+
+{% endblock %}
